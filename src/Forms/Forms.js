@@ -5,22 +5,21 @@ import { FormSelectorsButtons } from "./Form-selectors-buttons.js";
 export class Forms extends React.Component {
   constructor(props) {
     super(props);
-    this.flightsImitation = props.flightsImitation;
   }
-  refresh(flightsImitation) {
-    this.props.refreshFlights(flightsImitation);
-  }
+
   render() {
     return (
       <div className="form-block">
         <FormSearch
-          flightsImitation={this.flightsImitation}
+          flightsImitation={this.props.flightsImitation}
           refreshFlights={this.props.refreshFlights}
+          original={this.props.original}
         />
         <div className="form-selectors-block">
           <FormSelectorsButtons
-            flightsImitation={this.flightsImitation}
+            flightsImitation={this.props.flightsImitation}
             refreshFlights={this.props.refreshFlights}
+            original={this.props.original}
           />
         </div>
       </div>

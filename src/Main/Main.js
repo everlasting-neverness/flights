@@ -8,7 +8,8 @@ export class Main extends React.Component {
     super(props);
     this.refreshFlights = this.refreshFlights.bind(this);
     this.state = {
-      flightsImitation: flightsImitation
+      flightsImitation: flightsImitation,
+      original: flightsImitation
     };
   }
   refreshFlights(flightsImitation) {
@@ -22,11 +23,13 @@ export class Main extends React.Component {
         <Forms
           flightsImitation={this.state.flightsImitation}
           refreshFlights={this.refreshFlights}
+          original={this.state.original}
         />
         <div className="flight-main-block">
           <FlightList
             flightsImitation={this.state.flightsImitation}
             refreshFlights={this.refreshFlights}
+            original={this.state.original}
           />
         </div>
       </div>

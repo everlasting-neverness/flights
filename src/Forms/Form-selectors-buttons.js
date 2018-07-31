@@ -12,7 +12,14 @@ export class FormSelectorsButtons extends React.Component {
   render() {
     return (
       <form className="form-selectors-buttons" method="GET">
-        <button type="submit" className="selector-button">
+        <button
+          type="submit"
+          className="selector-button"
+          onClick={e => {
+            e.preventDefault();
+            this.refresh(this.props.original);
+          }}
+        >
           Все рейсы
         </button>
         <button type="submit" className="selector-button">

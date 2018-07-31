@@ -8,7 +8,7 @@ export class FormSearch extends React.Component {
     this.props.refreshFlights(flightsImitation);
   }
   render() {
-    let flightsImitation = this.props.flightsImitation;
+    let original = this.props.original;
     return (
       <form className="form-search" method="GET">
         <input
@@ -23,7 +23,7 @@ export class FormSearch extends React.Component {
           onClick={e => {
             e.preventDefault();
             let input = document.getElementById("search");
-            let newFlights = flightsImitation.filter(flight => {
+            let newFlights = original.filter(flight => {
               return flight.flight
                 .toLowerCase()
                 .includes(input.value.toLowerCase());

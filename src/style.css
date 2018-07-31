@@ -13,7 +13,7 @@ body {
 .main-header {
   font-size: 50px;
   font-family: serif;
-  color: #ffff34;
+  color: #fcd656;
   padding-left: 40px;
   margin: 10px;
   margin-top: 30px;
@@ -26,7 +26,7 @@ body {
 
 #search {
   margin-right: 25px;
-  background-color: #ffff34;
+  background-color: #fcd656;
   border: 1px solid grey;
   border-radius: 3px;
 }
@@ -45,11 +45,11 @@ body {
 .selector-button {
   display: inline-flex;
   flex: 1;
-  max-width: 15%;
+  max-width: 16%;
   max-height: 15%;
   margin-left: 10px;
-  text-align: center;
-  background-color: #ffff34;
+  font-weight: bold;
+  background-color: #fcd656;
   border: 1px solid grey;
   border-radius: 3px;
 }
@@ -73,19 +73,19 @@ button:hover {
   justify-content: center;
   font-size: 20px;
   font-family: sans-serif;
-  background-color: #063062;
+  background-color: #0b224e;
   flex-direction: column;
 }
 
 .flight-block {
   display: inline-flex;
   flex: 2;
-  border-bottom: 1px solid #ffff34;
+  border-bottom: 1px solid #fcd656;
 }
 
 .flight-block:hover {
-  background-color: #0361d9;
-  color: #ffff34;
+  background-color: #005196;
+  color: #fcd656;
 }
 
 .time,
@@ -103,4 +103,13 @@ button:hover {
 }
 
 .flight-block:first-child {
-  border-top: 1px solid #ffff34;
+  border-top: 1px solid #fcd656;
+}
+
+.flight-block div:nth-child(even) {
+  color: #6594c5;
+}
+
+.flight-block div:first-child {
+  color: #fcd656;
+}
