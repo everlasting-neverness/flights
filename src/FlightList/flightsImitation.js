@@ -2,25 +2,25 @@ export let flightsImitation = [
   {
     time: "13:12",
     flight: "D 312",
-    airport: "SVO",
+    airport: "CDG",
     type: "departure",
-    status: "ok",
-    city: "Moscow"
+    status: "ON TIME",
+    city: "Paris"
   },
   {
     time: "17:00",
     flight: "R 256",
-    airport: "DMO",
+    airport: "LHR",
     type: "arrival",
-    status: "ok",
+    status: "ON TIME",
     city: "London"
   },
   {
     time: "9:45",
-    flight: "R 17",
-    airport: "SVO",
+    flight: "AA 17",
+    airport: "JFK",
     type: "departure",
-    status: "ok",
+    status: "ON TIME",
     city: "New York"
   },
   {
@@ -28,7 +28,7 @@ export let flightsImitation = [
     flight: "S 47",
     airport: "LHR",
     type: "arrival",
-    status: "ok",
+    status: "ON TIME",
     city: "London"
   },
   {
@@ -36,7 +36,7 @@ export let flightsImitation = [
     flight: "TU 98",
     airport: "HRG",
     type: "arrival",
-    status: "delayed",
+    status: "DELAYED",
     city: "Hurghada"
   },
   {
@@ -44,7 +44,7 @@ export let flightsImitation = [
     flight: "AA 001",
     airport: "JFK",
     type: "arrival",
-    status: "delayed",
+    status: "DELAYED",
     city: "New York"
   },
   {
@@ -52,7 +52,7 @@ export let flightsImitation = [
     flight: "D 123",
     airport: "LAX",
     type: "departure",
-    status: "delayed",
+    status: "DELAYED",
     city: "Los-Angeles"
   }
 ];

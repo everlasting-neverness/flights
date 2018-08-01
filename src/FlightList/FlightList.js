@@ -8,6 +8,13 @@ export class FlightList extends React.Component {
           .filter(flight => {
             return flight.type === this.props.flightType;
           })
+          .filter(flight => {
+            if (this.props.flightStatus === "all") {
+              return true;
+            } else {
+              return flight.status === this.props.flightStatus;
+            }
+          })
           .map(flight => {
             return (
               <div className="flight-block" key={flight.flight}>
