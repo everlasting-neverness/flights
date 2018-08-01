@@ -11,27 +11,17 @@ export class FormSelectorsButtons extends React.Component {
 
   render() {
     return (
-      <form className="form-selectors-buttons" method="GET">
-        <button
-          type="submit"
-          className="selector-button"
-          onClick={e => {
-            e.preventDefault();
-            this.refresh(this.props.original);
-          }}
-        >
-          Все рейсы
+      <div className="flightNavigation">
+        <button type="submit" className="toggleButton">
+          Arrivals
         </button>
-        <button type="submit" className="selector-button">
-          Прилет
+        <button type="submit" className="toggleButton">
+          Departures
         </button>
-        <button type="submit" className="selector-button">
-          Вылет
+        <button type="submit" className="toggleButton">
+          Delayed
         </button>
-        <button type="submit" className="selector-button">
-          Задерживающиеся
-        </button>
-      </form>
+      </div>
     );
   }
 }

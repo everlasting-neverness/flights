@@ -11,18 +11,13 @@ export class FormSearch extends React.Component {
     let original = this.props.original;
     return (
       <form className="form-search" method="GET">
-        <input
-          type="search"
-          name="flight-id"
-          id="search"
-          title="Введите номер рейса"
-        />
+        <input type="search" name="flight-id" className="search" />
         <button
           type="submit"
           className="selector-button"
           onClick={e => {
             e.preventDefault();
-            let input = document.getElementById("search");
+            let input = document.querySelector(".search");
             let newFlights = original.filter(flight => {
               return flight.flight
                 .toLowerCase()
@@ -31,7 +26,7 @@ export class FormSearch extends React.Component {
             this.refresh(newFlights);
           }}
         >
-          Поиск
+          Search
         </button>
       </form>
     );
