@@ -1,19 +1,24 @@
 import React from "react";
-import { Forms } from "/Forms/Forms.js";
-import { FlightList } from "/FlightList/FlightList.js";
-import { flightsImitation } from "/FlightList/flightsImitation.js";
+import { Forms } from "../Forms/Forms.js";
+import { FlightList } from "../FlightList/FlightList.js";
+import { flightsImitation } from "../FlightList/flightsImitation.js";
 
 export class Main extends React.Component {
   constructor(props) {
     super(props);
     this.refreshFlights = this.refreshFlights.bind(this);
+    this.setToArrivals = this.setToArrivals.bind(this);
     this.state = {
-      flightsImitation: flightsImitation,
-      original: flightsImitation
+      flights: flightsImitation,
+      flightType: "departure"
     };
   }
-  refreshFlights(flightsImitation) {
-    this.setState({ flightsImitation });
+  refreshFlights(flights) {
+    this.setState({ flights });
+  }
+
+  setToArrivals() {
+    this.setState({ flightType: "arrival" });
   }
 
   render() {
@@ -22,18 +27,16 @@ export class Main extends React.Component {
         <div className="content">
           <h1 className="main-header">Flights</h1>
           <Forms
-            flightsImitation={this.state.flightsImitation}
+            flights={this.state.flights}
             refreshFlights={this.refreshFlights}
-            original={this.state.original}
+            setToArrivals={this.setToArrivals}
           />
         </div>
-        <div className="flight-main-block">
-          <FlightList
-            flightsImitation={this.state.flightsImitation}
-            refreshFlights={this.refreshFlights}
-            original={this.state.original}
-          />
-        </div>
+        <FlightList
+          flights={this.state.flights}
+          refreshFlights={this.refreshFlights}
+          flightType={this.state.flightType}
+        />
       </div>
     );
   }

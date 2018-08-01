@@ -3,23 +3,19 @@ import { FormSearch } from "./Form-search.js";
 import { FormSelectorsButtons } from "./Form-selectors-buttons.js";
 
 export class Forms extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="form-block">
         <FormSearch
-          flightsImitation={this.props.flightsImitation}
+          flights={this.props.flights}
           refreshFlights={this.props.refreshFlights}
-          original={this.props.original}
+
         />
         <div className="form-selectors-block">
           <FormSelectorsButtons
-            flightsImitation={this.props.flightsImitation}
+            flights={this.props.flights}
             refreshFlights={this.props.refreshFlights}
-            original={this.props.original}
+            setToArrivals={this.props.setToArrivals}
           />
         </div>
       </div>
