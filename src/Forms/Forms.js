@@ -6,7 +6,10 @@ export class Forms extends React.Component {
   render() {
     return (
       <div className="form-block">
-        <FormSearch flights={this.props.flights} />
+        <FormSearch
+          flights={this.props.flights}
+          flightSearchInput={this.props.flightSearchInput}
+        />
         <div className="form-selectors-block">
           <FormSelectorsButtons
             flights={this.props.flights}

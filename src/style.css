@@ -18,23 +18,41 @@ body {
 .main-header {
   font-size: 50px;
   color: #fcd656;
-  margin-left: 35px;
+  margin-left: 25px;
+  margin-bottom: 20px;
 }
 
 .form-block {
-  padding: 40px;
+  padding: 24px;
   font-size: 20px;
 }
 
 .search {
   margin-right: 25px;
-  border: 1px solid grey;
-  border-radius: 3px;
-  padding: 8px;
+  padding: 6px;
+  width: 334px;
+}
+
+.search::-webkit-input-placeholder {
+  color: #6594c5;
+  font-size: 22px;
+}
+
+.search:-moz-placeholder {
+  color: #6594c5;
+  font-size: 22px;
 }
 
 .search:focus {
   background-color: #ffffca;
+}
+
+.search:focus::-webkit-input-placeholder {
+  color: #ffffca;
+}
+
+.search:focus:focus:-moz-placeholder {
+  color: #ffffca;
 }
 
 .form-selectors-buttons {
@@ -48,11 +66,6 @@ body {
   border: none;
 }
 
-.search-button {
-  margin-left: 10px;
-  padding: 8px;
-}
-
 .toggleButton:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -64,7 +77,7 @@ body {
 
 .flightNavigation {
   margin-top: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 18px;
 }
 
 .flight-main-block {

@@ -15,6 +15,18 @@ export class FlightList extends React.Component {
               return flight.status === this.props.flightStatus;
             }
           })
+          .sort((a, b) => {
+            return Date.parse('1970/01/01' + ' ' + a.time) - Date.parse('1970/01/01'+ ' ' + b.time);
+          })
+          .filter(flight => {
+            if (!this.props.currentInputValue) {
+              return true;
+            } else {
+              return flight.flight
+                .toLowerCase()
+                .includes(this.props.currentInputValue.toLowerCase());
+            }
+          })
           .map(flight => {
             return (
               <div className="flight-block" key={flight.flight}>

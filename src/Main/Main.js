@@ -9,10 +9,12 @@ export class Main extends React.Component {
     this.setToArrivals = this.setToArrivals.bind(this);
     this.setToDepartures = this.setToDepartures.bind(this);
     this.setToDelayed = this.setToDelayed.bind(this);
+    this.flightSearchInput = this.flightSearchInput.bind(this);
     this.state = {
       flights: flightsImitation,
       flightType: "departure",
-      flightStatus: "all"
+      flightStatus: "all",
+      currentInputValue: ""
     };
   }
 
@@ -32,6 +34,12 @@ export class Main extends React.Component {
     }
   }
 
+  flightSearchInput() {
+    let userInput = document.querySelector(".search").value;
+    console.log(userInput);
+    this.setState({ currentInputValue: userInput });
+  }
+
   render() {
     return (
       <div className="main">
@@ -41,15 +49,18 @@ export class Main extends React.Component {
             flights={this.state.flights}
             flightType={this.state.flightType}
             flightStatus={this.state.flightStatus}
+            currentInputValue={this.state.currentInputValue}
             setToArrivals={this.setToArrivals}
             setToDepartures={this.setToDepartures}
             setToDelayed={this.setToDelayed}
+            flightSearchInput={this.flightSearchInput}
           />
         </div>
         <FlightList
           flights={this.state.flights}
           flightType={this.state.flightType}
           flightStatus={this.state.flightStatus}
+          currentInputValue={this.state.currentInputValue}
         />
       </div>
     );
