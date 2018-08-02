@@ -28,7 +28,7 @@ export class FormSelectorsButtons extends React.Component {
           className={`toggleButton ${
             this.props.flightStatus === "DELAYED" ? "toggleButtonActive" : ""
           }`}
-          onClick={this.props.setToDelayed}
+          onClick={this.props.toggleDelayed}
         >
           Delayed
         </button>

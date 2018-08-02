@@ -225,4 +225,8 @@ export let flightsImitation = [
   }
 ];
 
-window.flightsImitation = flightsImitation;
+export function getData(fn) {
+  setTimeout(() => {
+    return fn(flightsImitation);
+  }, 1200);
+}

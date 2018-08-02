@@ -80,6 +80,12 @@ body {
   margin-bottom: 18px;
 }
 
+.loading {
+  font-size: 20px;
+  text-align: center;
+  padding: 30px;
+}
+
 .flight-main-block {
   font-size: 20px;
 }

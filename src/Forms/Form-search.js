@@ -9,7 +9,7 @@ export class FormSearch extends React.Component {
           name="query"
           className="search"
           placeholder="Enter a flight number"
-          onChange={this.props.flightSearchInput}
+          onChange={this.props.handleSearchChange}
         />
       </form>
     );

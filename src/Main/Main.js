@@ -1,21 +1,24 @@
 import React from "react";
 import { Forms } from "../Forms/Forms.js";
 import { FlightList } from "../FlightList/FlightList.js";
-import { flightsImitation } from "../FlightList/flightsImitation.js";
+import { getData } from "../FlightsData/flightsImitation.js";
 
 export class Main extends React.Component {
   constructor(props) {
     super(props);
     this.setToArrivals = this.setToArrivals.bind(this);
     this.setToDepartures = this.setToDepartures.bind(this);
-    this.setToDelayed = this.setToDelayed.bind(this);
-    this.flightSearchInput = this.flightSearchInput.bind(this);
+    this.toggleDelayed = this.toggleDelayed.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
     this.state = {
-      flights: flightsImitation,
+      flights: null,
       flightType: "departure",
       flightStatus: "all",
       currentInputValue: ""
     };
+    getData(flightsImitation => {
+      this.setState({ flights: flightsImitation });
+    });
   }
 
   setToArrivals() {
@@ -26,7 +29,7 @@ export class Main extends React.Component {
     this.setState({ flightType: "departure" });
   }
 
-  setToDelayed() {
+  toggleDelayed() {
     if (this.state.flightStatus === "all") {
       this.setState({ flightStatus: "DELAYED" });
     } else {
@@ -34,10 +37,8 @@ export class Main extends React.Component {
     }
   }
 
-  flightSearchInput() {
-    let userInput = document.querySelector(".search").value;
-    console.log(userInput);
-    this.setState({ currentInputValue: userInput });
+  handleSearchChange(e) {
+    this.setState({ currentInputValue: e.target.value });
   }
 
   render() {
@@ -46,22 +47,25 @@ export class Main extends React.Component {
         <div className="content">
           <h1 className="main-header">Flights</h1>
           <Forms
-            flights={this.state.flights}
             flightType={this.state.flightType}
             flightStatus={this.state.flightStatus}
             currentInputValue={this.state.currentInputValue}
             setToArrivals={this.setToArrivals}
             setToDepartures={this.setToDepartures}
-            setToDelayed={this.setToDelayed}
-            flightSearchInput={this.flightSearchInput}
+            toggleDelayed={this.toggleDelayed}
+            handleSearchChange={this.handleSearchChange}
           />
         </div>
-        <FlightList
-          flights={this.state.flights}
-          flightType={this.state.flightType}
-          flightStatus={this.state.flightStatus}
-          currentInputValue={this.state.currentInputValue}
-        />
+        {!this.state.flights ? (
+          <p className="loading">Waiting...</p>
+        ) : (
+          <FlightList
+            flights={this.state.flights}
+            flightType={this.state.flightType}
+            flightStatus={this.state.flightStatus}
+            currentInputValue={this.state.currentInputValue}
+          />
+        )}
       </div>
     );
   }

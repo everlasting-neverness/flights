@@ -6,18 +6,14 @@ export class Forms extends React.Component {
   render() {
     return (
       <div className="form-block">
-        <FormSearch
-          flights={this.props.flights}
-          flightSearchInput={this.props.flightSearchInput}
-        />
+        <FormSearch handleSearchChange={this.props.handleSearchChange} />
         <div className="form-selectors-block">
           <FormSelectorsButtons
-            flights={this.props.flights}
             flightType={this.props.flightType}
             flightStatus={this.props.flightStatus}
             setToArrivals={this.props.setToArrivals}
             setToDepartures={this.props.setToDepartures}
-            setToDelayed={this.props.setToDelayed}
+            toggleDelayed={this.props.toggleDelayed}
           />
         </div>
       </div>
