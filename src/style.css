@@ -113,3 +113,11 @@ body {
   flex: 2;
   padding: 10px;
 }
+
+.time-range {
+  padding: 10px;
+  color: #fcd656;
+  border-bottom: 1px solid #333;
+  font-size: 25px;
+  font-weight: bold;
+}
