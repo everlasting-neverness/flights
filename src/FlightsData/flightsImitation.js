@@ -228,5 +228,5 @@ export let flightsImitation = [
 export function getData(fn) {
   setTimeout(() => {
     return fn(flightsImitation);
-  }, 1200);
+  }, 3000);
 }

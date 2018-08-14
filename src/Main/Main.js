@@ -15,10 +15,11 @@ export class Main extends React.Component {
       flights: null,
       flightType: "departure",
       flightStatus: "all",
-      currentInputValue: ""
+      currentInputValue: "",
+      loading: true
     };
     getData(flightsImitation => {
-      this.setState({ flights: flightsImitation });
+      this.setState({ flights: flightsImitation, loading: false });
     });
   }
 
@@ -44,7 +45,7 @@ export class Main extends React.Component {
 
   render() {
     return (
-      <div className="main">
+      <div className={`main ${this.state.loading ? "spinner" : ""}`}>
         <h1 className="main-header">Flights</h1>
         <div className="content">
           <Forms
