@@ -3,6 +3,7 @@
 }
 
 body {
+  position: relative;
   background-color: #151515;
   background-repeat: no-repeat;
   color: white;
@@ -12,19 +13,24 @@ body {
 }
 
 .content {
-  padding: 0 40px;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-header {
   font-size: 50px;
   color: #fcd656;
-  margin-left: 25px;
+  margin-left: 62px;
   margin-bottom: 20px;
 }
 
 .form-block {
+  width: 50%;
   padding: 24px;
   font-size: 20px;
+  display: inline-block;
 }
 
 .search {
@@ -78,6 +84,13 @@ body {
 .flightNavigation {
   margin-top: 32px;
   margin-bottom: 18px;
+}
+
+.clock-block {
+  display: inline-block;
+  width: 45%;
+  padding: 24px;
+  margin-bottom: 15px;
 }
 
 .loading {

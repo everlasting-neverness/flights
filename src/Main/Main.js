@@ -2,6 +2,7 @@ import React from "react";
 import { Forms } from "../Forms/Forms.js";
 import { FlightList } from "../FlightList/FlightList.js";
 import { getData } from "../FlightsData/flightsImitation.js";
+import Clock from "../Clock/Clock.js";
 
 export class Main extends React.Component {
   constructor(props) {
@@ -44,8 +45,8 @@ export class Main extends React.Component {
   render() {
     return (
       <div className="main">
+        <h1 className="main-header">Flights</h1>
         <div className="content">
-          <h1 className="main-header">Flights</h1>
           <Forms
             flightType={this.state.flightType}
             flightStatus={this.state.flightStatus}
@@ -55,6 +56,9 @@ export class Main extends React.Component {
             toggleDelayed={this.toggleDelayed}
             handleSearchChange={this.handleSearchChange}
           />
+          <div className="clock-block">
+            <Clock />
+          </div>
         </div>
         {!this.state.flights ? (
           <p className="loading">Waiting...</p>
